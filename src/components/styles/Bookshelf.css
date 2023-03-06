@@ -1,0 +1,71 @@
+.bookshelf {
+    width: 100%;
+    min-height: 100vh;
+    background: var(--img-back);
+    position: relative;
+    overflow: hidden;
+}
+
+/* .works__container{ why does this not push down the section (but also leave navbar alone?? 
+    margin-top: 2rem;
+} */
+.books {
+    padding-top: 1%;
+    margin-left: 23rem;
+}
+
+.books h1 {
+    color: var(--main-purple);
+    font-family: Righteous, 'Helvetica';
+    font-size: 50px;
+    font-weight:lighter;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 7px;
+    text-decoration-color: var(--thoughts-grey-underline);
+    margin-top:3rem;
+}
+
+.books h3 pre{
+    color: var(--thoughts-grey);
+    text-decoration: underline;
+    text-decoration-thickness: 0.5px;
+    text-decoration-color: var(--thoughts-grey-underline);
+    text-underline-offset: 7px;
+    font-family: Helvetica;
+    font-weight: 100;
+    font-size: 17px;
+}
+
+.long {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.books h3 pre:hover {
+    font-weight: 500;
+    cursor: pointer;
+}
+
+@media (min-width:900px) {
+    .bookshelf__container {
+        display: grid;
+        padding: 20px;
+        margin-block: 1rem;
+        grid-template-columns: repeat(auto-fit,minmax(35rem,1fr));
+        gap: 1rem;
+    }
+}
+
+@media (max-width:900px) {
+    .bookshelf__container {
+        padding:20px;
+        position: fixed;
+        top: 10%;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+    .books {
+        margin-block: 1rem;
+    }
+}
